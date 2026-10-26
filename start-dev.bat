@@ -6,7 +6,7 @@ echo.
 
 REM Start AI Service (Django)
 echo [1/3] Starting AI Service on port 8000...
-start "FlowGen AI Service" cmd /k "cd /d "%~dp0ai-service" && python manage.py runserver 8000"
+start "FlowGen AI Service" cmd /k "cd /d "%~dp0ai-service" && call venv\Scripts\activate && python manage.py runserver 8000"
 
 REM Wait a moment before launching next service
 timeout /t 2 /nobreak >nul
