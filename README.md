@@ -1,63 +1,57 @@
 <div align="center">
 
-```
-███████╗██╗      ██████╗ ██╗    ██╗ ██████╗ ███████╗███╗   ██╗
-██╔════╝██║     ██╔═══██╗██║    ██║██╔════╝ ██╔════╝████╗  ██║
-█████╗  ██║     ██║   ██║██║ █╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
-██╔══╝  ██║     ██║   ██║██║███╗██║██║   ██║██╔══╝  ██║╚██╗██║
-██║     ███████╗╚██████╔╝╚███╔███╔╝╚██████╔╝███████╗██║ ╚████║
-╚═╝     ╚══════╝ ╚═════╝  ╚══╝╚══╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝
+```text
+ ███████╗██╗      ██████╗ ██╗    ██╗ ██████╗ ███████╗███╗   ██╗
+ ██╔════╝██║     ██╔═══██╗██║    ██║██╔════╝ ██╔════╝████╗  ██║
+ █████╗  ██║     ██║   ██║██║ █╗ ██║██║  ███╗█████╗  ██╔██╗ ██║
+ ██╔══╝  ██║     ██║   ██║██║███╗██║██║   ██║██╔══╝  ██║╚██╗██║
+ ██║     ███████╗╚██████╔╝╚███╔███╔╝╚██████╔╝███████╗██║ ╚████║
+ ╚═╝     ╚══════╝ ╚═════╝  ╚══╝╚══╝  ╚═════╝ ╚══════╝╚═╝  ╚═══╝
 ```
 
-### **The Intelligent Workforce Operating System**
+# FlowGen
+
+### The Intelligent Workforce Operating System
 
 [![MIT License](https://img.shields.io/badge/License-MIT-06B6D4?style=for-the-badge)](LICENSE)
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com)
 [![Django](https://img.shields.io/badge/Python-Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://python.org)
-[![Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=for-the-badge&logo=vercel)](https://vercel.com)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel)](https://vercel.com)
 [![Render](https://img.shields.io/badge/API-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black)](https://render.com)
 
-> **One platform for every role in your organization** — admins, HR, employees, and interns — unified under a real-time, AI-powered workspace.
+> One platform for every role in your organization — admins, HR, employees, and interns — unified under a real-time, AI-powered workspace.
 
 </div>
 
 ---
 
-## 📋 Table of Contents
-
-- [Overview](#-overview)
-- [System Architecture](#-system-architecture)
-- [Portals & Role System](#-portals--role-system)
-- [Feature Matrix](#-feature-matrix)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [API Overview](#-api-overview)
-- [Quick Start](#-quick-start)
-- [Environment Variables](#-environment-variables)
-- [Deployment](#-deployment)
-- [Data Flow](#-data-flow)
-- [Test Accounts](#-test-accounts)
-- [Contributing](#-contributing)
-- [License](#-license)
-
----
-
 ## 🌟 Overview
 
-FlowGen is a **full-stack, multi-tenant SaaS** platform that replaces the patchwork of Slack, Jira, Google Meet, and HR tools with a single intelligent workspace. Every feature is real-time, role-aware, and AI-augmented via **FlowBot** — the built-in AI assistant powered by Google Gemini.
+FlowGen is a full-stack, multi-tenant SaaS platform designed to replace fragmented workplace tooling with a single intelligent workforce operating system.
+
+It brings together:
+
+- HR operations and employee management
+- project tracking and team coordination
+- attendance and meetings
+- live chat and notifications
+- AI-powered assistance through FlowBot
+- role-based access for every user type
+
+FlowGen is built for organizations that want a modern digital workplace without stitching together multiple tools for communication, operations, and productivity.
 
 ### Key Differentiators
 
 | Capability | What it means |
-|:---|:---|
-| 🏢 **Multi-tenant** | Each organization is fully isolated — separate data, branding, and members |
-| 🎭 **Role-based portals** | Every user sees exactly what their role needs — nothing more |
-| ⚡ **Real-time everywhere** | Socket.io pushes live updates to dashboards, chats, notifications |
-| 🤖 **AI-native** | FlowBot understands tasks, deadlines, meetings — not just keywords |
-| 📧 **Branded emails** | Premium HTML email templates for invites, resets, and alerts |
-| 🔐 **JWT + cookie auth** | Secure access + refresh token rotation with HttpOnly cookies |
+| :--- | :--- |
+| 🏢 Multi-tenant | Every organization is isolated with separate data, branding, and members |
+| 🎭 Role-based portals | Each user sees only what they need based on role |
+| ⚡ Real-time workflows | Live updates across chats, notifications, attendance, and dashboards |
+| 🤖 AI-native | FlowBot helps with tasks, deadlines, meeting context, and workflow insights |
+| 📧 Branded communications | Premium email templates for invites, resets, and alerts |
+| 🔐 Secure auth | JWT + cookie authentication with access/refresh rotation |
 
 ---
 
@@ -72,14 +66,14 @@ graph TB
         U4["🎓 Intern"]
     end
 
-    subgraph CLIENT["⚛️ React Frontend  ·  Vercel"]
+    subgraph CLIENT["⚛️ React Frontend · Vercel"]
         FE["Single Page App\nVite 8 · React 19 · Tailwind"]
         WS_C["Socket.io Client"]
         ZS["Zustand Store"]
         TQ["TanStack Query Cache"]
     end
 
-    subgraph SERVER["🟢 Node.js API  ·  Render"]
+    subgraph SERVER["🟢 Node.js API · Render"]
         API["19 REST Route Groups"]
         WS_S["Socket.io Gateway"]
         AUTH["JWT Auth Middleware"]
@@ -88,7 +82,7 @@ graph TB
         RATE["Rate Limiter"]
     end
 
-    subgraph AI["🐍 Django AI Service  ·  Render"]
+    subgraph AI["🐍 Django AI Service · Render"]
         BOT["FlowBot Engine"]
         GEMINI["Gemini API Integration"]
         ANALYTICS["ML Analytics"]
@@ -128,7 +122,7 @@ graph TB
 
 ## 🎭 Portals & Role System
 
-FlowGen ships **four role-specific portals**, each tailored to what that user actually needs.
+FlowGen ships with four role-specific portals, each tailored to the needs of the user performing that role.
 
 ```mermaid
 flowchart TD
@@ -176,7 +170,7 @@ flowchart TD
 ## ✅ Feature Matrix
 
 | Feature | 👑 Org Admin | 🧑‍💼 HR | 👷 Employee | 🎓 Intern |
-|:---|:---:|:---:|:---:|:---:|
+| :--- | :---: | :---: | :---: | :---: |
 | **Analytics Dashboard** | ✅ Full | ✅ Limited | ❌ | ❌ |
 | **Member Management** | ✅ Full | ✅ View | ❌ | ❌ |
 | **Team Creation & Edit** | ❌ | ✅ | ❌ | ❌ |
@@ -242,20 +236,20 @@ graph LR
 ### Detailed Stack Table
 
 | Layer | Technology | Version | Purpose |
-|:---|:---|:---:|:---|
+| :--- | :--- | :---: | :--- |
 | **Frontend Framework** | React | 19 | Component-based UI |
-| **Build Tool** | Vite | 8 | Fast HMR & bundling |
-| **Styling** | Tailwind CSS | 3.4 | Utility-first CSS |
+| **Build Tool** | Vite | 8 | Fast HMR and bundling |
+| **Styling** | Tailwind CSS | 3.4 | Utility-first styling |
 | **State Management** | Zustand | 5 | Global client state |
 | **Server State** | TanStack Query | 5 | Async data + caching |
-| **Animations** | Framer Motion | 12 | Premium UI animations |
-| **Forms** | React Hook Form + Zod | 7 / 4 | Validation & forms |
+| **Animations** | Framer Motion | 12 | Premium UI transitions |
+| **Forms** | React Hook Form + Zod | 7 / 4 | Validation and forms |
 | **Charts** | Recharts | 3 | Analytics visualizations |
-| **Drag & Drop** | dnd-kit | 6 | Kanban board |
+| **Drag & Drop** | dnd-kit | 6 | Kanban workflow |
 | **Backend Runtime** | Node.js + Express | 18+ / 4 | REST API server |
-| **Real-time** | Socket.io | 4 | Bidirectional events |
+| **Real-time** | Socket.io | 4 | Live event streaming |
 | **Authentication** | JWT (access + refresh) | 9 | Secure token auth |
-| **Database ORM** | Mongoose | 8 | MongoDB schema/query |
+| **Database ORM** | Mongoose | 8 | MongoDB schema and queries |
 | **Primary Database** | MongoDB Atlas | 6+ | Document storage |
 | **Email** | Nodemailer | 8 | Transactional email |
 | **Rate Limiting** | express-rate-limit | 7 | API abuse prevention |
@@ -265,67 +259,67 @@ graph LR
 | **AI Provider** | Google Gemini | — | FlowBot intelligence |
 | **Python Server** | Gunicorn | 21 | Production WSGI server |
 | **Static Files** | WhiteNoise | 6 | Django static serving |
-| **AI Database** | SQLite | — | AI service local DB |
+| **AI Database** | SQLite | — | AI service local database |
 
 ---
 
 ## 📁 Project Structure
 
-```
+```text
 flowgen/
-├── 📄 render.yaml              ← Multi-service Render deployment blueprint
-├── 📄 start-dev.bat            ← Windows one-command dev launcher
-├── 📄 .gitignore               ← Root gitignore (all services)
+├── render.yaml                ← Multi-service Render deployment blueprint
+├── start-dev.bat             ← Windows one-command dev launcher
+├── .gitignore                ← Root gitignore (all services)
 │
-├── client/                     ← ⚛️  React + Vite Frontend
+├── client/                   ← ⚛️ React + Vite Frontend
 │   ├── src/
-│   │   ├── components/         ← Reusable UI components
+│   │   ├── components/       ← Reusable UI components
 │   │   ├── pages/
-│   │   │   ├── auth/           ← Login, Register, Reset
-│   │   │   ├── org/            ← Org Admin portal pages
-│   │   │   ├── hr/             ← HR Manager portal pages
-│   │   │   ├── employee/       ← Employee portal pages
-│   │   │   ├── intern/         ← Intern portal pages
-│   │   │   ├── landing/        ← Public landing page
-│   │   │   └── shared/         ← Pages shared across roles
-│   │   ├── store/              ← Zustand global state stores
-│   │   ├── lib/                ← Axios instance, QueryClient, utils
-│   │   ├── router/             ← React Router v7 config
-│   │   └── utils/              ← Utility helpers
-│   ├── .env.example            ← Client env template
-│   ├── vercel.json             ← Vercel SPA rewrite rules
-│   └── vite.config.js          ← Vite build config (code-split)
+│   │   │   ├── auth/         ← Login, register, reset
+│   │   │   ├── org/          ← Org Admin pages
+│   │   │   ├── hr/           ← HR pages
+│   │   │   ├── employee/     ← Employee pages
+│   │   │   ├── intern/        ← Intern pages
+│   │   │   ├── landing/      ← Public landing page
+│   │   │   └── shared/       ← Shared pages
+│   │   ├── store/            ← Zustand global state
+│   │   ├── lib/              ← Axios, query client, utils
+│   │   ├── router/           ← React Router v7 config
+│   │   └── utils/            ← Utility helpers
+│   ├── .env.example
+│   ├── vercel.json
+│   └── vite.config.js
 │
-├── server/                     ← 🟢 Node.js / Express Backend
+├── server/                   ← 🟢 Node.js / Express backend
 │   ├── src/
-│   │   ├── app.js              ← Express app setup (CORS, middleware)
-│   │   ├── index.js            ← Entry point (HTTP + Socket.io)
-│   │   ├── config/             ← DB, socket, environment config
-│   │   ├── controllers/        ← Business logic handlers
-│   │   ├── middleware/         ← Auth, rate-limit, tenant, error
-│   │   ├── models/             ← Mongoose schemas
-│   │   ├── routes/             ← 19 API route groups
-│   │   ├── services/           ← Email, AI bridge, notifications
-│   │   ├── templates/          ← HTML email templates
-│   │   ├── utils/              ← Cron jobs, helpers
-│   │   └── validators/         ← Zod request validators
+│   │   ├── app.js            ← Express app setup
+│   │   ├── index.js          ← Entry point (HTTP + Socket.io)
+│   │   ├── config/           ← DB, socket, environment config
+│   │   ├── controllers/      ← Business logic handlers
+│   │   ├── middleware/       ← Auth, rate-limit, tenant, error
+│   │   ├── models/           ← Mongoose schemas
+│   │   ├── routes/           ← 19 API route groups
+│   │   ├── services/         ← Email, AI bridge, notifications
+│   │   ├── templates/        ← HTML email templates
+│   │   ├── utils/            ← Cron jobs and helpers
+│   │   └── validators/       ← Zod request validators
 │   ├── seed/
-│   │   ├── seed.js             ← Populate DB with demo organizations
-│   │   └── clear.js            ← Wipe seed data
+│   │   ├── seed.js           ← Populate DB with demo organizations
+│   │   └── clear.js          ← Wipe seed data
 │   ├── uploads/
-│   │   └── .gitkeep            ← Upload directory placeholder
-│   ├── .env.example            ← Server env template
+│   │   └── .gitkeep
+│   ├── .env.example
 │   └── package.json
 │
-└── ai-service/                 ← 🐍 Python / Django AI Microservice
-    ├── flowgen_ai/             ← Django project settings
-    ├── ai_chat/                ← FlowBot chat endpoints
-    ├── ai_assistant/           ← AI assistant logic
-    ├── analytics_ml/           ← ML analytics module
-    ├── manage.py               ← Django management CLI
-    ├── requirements.txt        ← Python dependencies
-    ├── Procfile                ← Gunicorn start command
-    ├── .env.example            ← AI service env template
+└── ai-service/               ← 🐍 Python / Django AI microservice
+    ├── flowgen_ai/           ← Django settings
+    ├── ai_chat/              ← FlowBot chat endpoints
+    ├── ai_assistant/         ← AI assistant logic
+    ├── analytics_ml/         ← ML analytics module
+    ├── manage.py
+    ├── requirements.txt
+    ├── Procfile
+    ├── .env.example
     └── .gitignore
 ```
 
@@ -333,7 +327,7 @@ flowgen/
 
 ## 🔌 API Overview
 
-All endpoints are prefixed `/api/v1`. Authentication via `Authorization: Bearer <token>` or `HttpOnly` cookie.
+All endpoints are prefixed with `/api/v1`. Authentication is handled via `Authorization: Bearer <token>` or an `HttpOnly` cookie.
 
 ```mermaid
 graph LR
@@ -345,7 +339,7 @@ graph LR
         P5["/health"]
     end
 
-    subgraph PROTECTED["🔐 Protected  (JWT required)"]
+    subgraph PROTECTED["🔐 Protected (JWT required)"]
         subgraph ORG_R["Org"]
             R1["/org"]
             R2["/members"]
@@ -378,26 +372,26 @@ graph LR
 ```
 
 | Group | Routes | Description |
-|:---|:---|:---|
-| **Auth** | `/auth/*` | Register, login, refresh, password reset, email verify |
-| **Organization** | `/org/*` | CRUD org, settings, overview |
-| **Members** | `/members/*` | Invite, manage, remove members |
-| **Analytics** | `/analytics/*` | Org-wide statistics and reports |
-| **Teams** | `/teams/*` | Create teams, assign members |
-| **Projects** | `/projects/*` | Project CRUD, progress tracking |
-| **Tasks** | `/tasks/*` | Kanban tasks, status transitions |
-| **Sprints** | `/sprints/*` | Sprint planning and tracking |
-| **Attendance** | `/attendance/*` | Check-in/out, HR reports |
-| **Meetings** | `/meetings/*` | Schedule, update, join meetings |
-| **Alerts** | `/alerts/*` | HR smart alerts and thresholds |
-| **Messages** | `/messages/*` | DM inbox system |
+| :--- | :--- | :--- |
+| **Auth** | `/auth/*` | Register, login, refresh, password reset |
+| **Organization** | `/org/*` | Org CRUD and settings |
+| **Members** | `/members/*` | Invite and manage members |
+| **Analytics** | `/analytics/*` | Business statistics and reports |
+| **Teams** | `/teams/*` | Team creation and assignment |
+| **Projects** | `/projects/*` | Project management |
+| **Tasks** | `/tasks/*` | Kanban task workflow |
+| **Sprints** | `/sprints/*` | Sprint planning |
+| **Attendance** | `/attendance/*` | Check-in/out and attendance tracking |
+| **Meetings** | `/meetings/*` | Meeting scheduling and updates |
+| **Alerts** | `/alerts/*` | Smart HR and workflow alerts |
+| **Messages** | `/messages/*` | Direct messages |
 | **Chat** | `/chat/*` | Real-time group/team chat |
-| **Notifications** | `/notifications/*` | Push notification log |
+| **Notifications** | `/notifications/*` | Notification log |
 | **Resources** | `/resources/*` | Company resource library |
 | **Learning** | `/learning/*` | Intern learning paths |
-| **Onboarding** | `/onboarding/*` | New member onboarding flow |
-| **User** | `/user/*` | Profile, settings, avatar |
-| **AI** | `/ai/*` | FlowBot bridge to AI service |
+| **Onboarding** | `/onboarding/*` | New member onboarding |
+| **User** | `/user/*` | Profile and account settings |
+| **AI** | `/ai/*` | FlowBot integration and AI requests |
 
 ---
 
@@ -406,7 +400,7 @@ graph LR
 ### Prerequisites
 
 | Requirement | Version | Download |
-|:---|:---|:---|
+| :--- | :--- | :--- |
 | **Node.js** | 18+ | [nodejs.org](https://nodejs.org) |
 | **MongoDB** | 6+ | [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) or [Community](https://www.mongodb.com/try/download/community) |
 | **Python** | 3.10+ | [python.org](https://www.python.org/downloads/) |
@@ -416,7 +410,7 @@ graph LR
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Mokshilxhah/Flowgen
+git clone https://github.com/dolendx7/Flowgen.git
 cd Flowgen
 ```
 
@@ -425,8 +419,8 @@ cd Flowgen
 cd server
 npm install
 cp .env.example .env
-# ✏️  Edit .env — set MONGODB_URI and JWT secrets
-npm run seed    # Optional: populate with demo data
+# Edit .env and set MONGODB_URI and JWT secrets
+npm run seed   # optional demo data
 ```
 
 **Frontend (React)**
@@ -434,48 +428,49 @@ npm run seed    # Optional: populate with demo data
 cd ../client
 npm install
 cp .env.example .env
-# ✏️  Edit .env — set VITE_API_BASE_URL=http://localhost:5000/api/v1
+# Edit .env and set VITE_API_BASE_URL=http://localhost:5000/api/v1
 ```
 
 **AI Service (Python)**
 ```bash
 cd ../ai-service
 python -m venv venv
-# Windows:
+
+# Windows
 venv\Scripts\activate
-# macOS/Linux:
+
+# macOS / Linux
 source venv/bin/activate
 
 pip install -r requirements.txt
 cp .env.example .env
-# ✏️  Edit .env — set GEMINI_API_KEY and NODE_BACKEND_API_KEY
+# Edit .env and set GEMINI_API_KEY and NODE_BACKEND_API_KEY
 python manage.py migrate
 ```
 
 ### Running in Development
 
-**Option 1 — Windows one-click:**
+**Option 1 — Windows one-click**
 ```bash
-# From project root
 start-dev.bat
 ```
 
-**Option 2 — Manual (all platforms):**
+**Option 2 — Manual**
 ```bash
-# Terminal 1 — Backend API
+# Terminal 1 - Backend API
 cd server && npm run dev
 
-# Terminal 2 — Frontend
+# Terminal 2 - Frontend
 cd client && npm run dev
 
-# Terminal 3 — AI Service
+# Terminal 3 - AI Service
 cd ai-service && python manage.py runserver 8000
 ```
 
 ### Local URLs
 
 | Service | URL | Description |
-|:---|:---|:---|
+| :--- | :--- | :--- |
 | **Frontend** | http://localhost:5173 | React app |
 | **Backend API** | http://localhost:5000 | Express REST API |
 | **AI Service** | http://localhost:8000 | Django AI service |
@@ -495,12 +490,12 @@ VITE_SOCKET_URL=http://localhost:5000
 ### `server/.env`
 
 | Variable | Example | Required |
-|:---|:---|:---:|
+| :--- | :--- | :---: |
 | `PORT` | `5000` | ✅ |
 | `NODE_ENV` | `production` | ✅ |
 | `MONGODB_URI` | `mongodb+srv://...` | ✅ |
-| `JWT_ACCESS_SECRET` | *(random 64-char string)* | ✅ |
-| `JWT_REFRESH_SECRET` | *(random 64-char string)* | ✅ |
+| `JWT_ACCESS_SECRET` | random 64-char string | ✅ |
+| `JWT_REFRESH_SECRET` | random 64-char string | ✅ |
 | `JWT_ACCESS_EXPIRES` | `15m` | ✅ |
 | `JWT_REFRESH_EXPIRES` | `7d` | ✅ |
 | `CLIENT_URL` | `https://flowgen.vercel.app` | ✅ |
@@ -508,23 +503,23 @@ VITE_SOCKET_URL=http://localhost:5000
 | `SMTP_HOST` | `smtp.gmail.com` | ✅ |
 | `SMTP_PORT` | `587` | ✅ |
 | `SMTP_USER` | `your@gmail.com` | ✅ |
-| `SMTP_PASS` | *(Gmail App Password)* | ✅ |
-| `NODE_BACKEND_API_KEY` | *(shared secret with AI)* | ✅ |
-| `RAZORPAY_KEY_SECRET` | *(from Razorpay dashboard)* | ⚠️ Optional |
+| `SMTP_PASS` | Gmail app password | ✅ |
+| `NODE_BACKEND_API_KEY` | shared secret with AI | ✅ |
+| `RAZORPAY_KEY_SECRET` | from Razorpay dashboard | ⚠️ Optional |
 | `BILLING_SIMULATE` | `true` | ✅ |
 
 ### `ai-service/.env`
 
 | Variable | Example | Required |
-|:---|:---|:---:|
-| `SECRET_KEY` | *(Django secret key)* | ✅ |
+| :--- | :--- | :---: |
+| `SECRET_KEY` | Django secret key | ✅ |
 | `DEBUG` | `False` | ✅ |
 | `ALLOWED_HOSTS` | `*.onrender.com` | ✅ |
-| `GEMINI_API_KEY` | *(from Google AI Studio)* | ✅ |
+| `GEMINI_API_KEY` | Google AI Studio key | ✅ |
 | `NODE_BACKEND_URL` | `https://flowgen-api.onrender.com/api/v1` | ✅ |
-| `NODE_BACKEND_API_KEY` | *(must match server)* | ✅ |
+| `NODE_BACKEND_API_KEY` | must match server | ✅ |
 | `CORS_ALLOWED_ORIGINS` | `https://flowgen.vercel.app` | ✅ |
-| `OPENAI_API_KEY` | *(optional fallback)* | ⚠️ Optional |
+| `OPENAI_API_KEY` | optional fallback | ⚠️ Optional |
 
 ---
 
@@ -549,7 +544,7 @@ graph LR
     style MDB fill:#0A1F0A,stroke:#4ADE80,color:#4ADE80
 ```
 
-### Step-by-Step Deployment
+### Step-by-step deployment
 
 ```mermaid
 sequenceDiagram
@@ -579,18 +574,18 @@ sequenceDiagram
     VR->>VR: Redeploy
 ```
 
-### Platform Configuration
+### Platform configuration
 
 | Service | Platform | Build Command | Start Command | Key Env Vars |
-|:---|:---|:---|:---|:---|
-| **Frontend** | Vercel | `npm run build` | *(Vercel handles)* | `VITE_API_BASE_URL`, `VITE_SOCKET_URL` |
+| :--- | :--- | :--- | :--- | :--- |
+| **Frontend** | Vercel | `npm run build` | Vercel handles it | `VITE_API_BASE_URL`, `VITE_SOCKET_URL` |
 | **Node API** | Render | `npm install --production` | `node src/index.js` | `MONGODB_URI`, `JWT_*`, `CLIENT_URL`, `AI_SERVICE_URL` |
 | **Django AI** | Render | `pip install -r requirements.txt && python manage.py migrate` | `gunicorn flowgen_ai.wsgi:application` | `SECRET_KEY`, `GEMINI_API_KEY`, `NODE_BACKEND_*` |
-| **Database** | MongoDB Atlas | *(managed)* | *(managed)* | Whitelist `0.0.0.0/0` in Network Access |
+| **Database** | MongoDB Atlas | managed | managed | Whitelist `0.0.0.0/0` |
 
-> 💡 **Free tier tip:** On Render's free tier, services sleep after 15 minutes of inactivity. Use [cron-job.org](https://cron-job.org) to ping `/health` and `/health/` every 14 minutes to prevent cold starts.
-
-> 💡 **Render Blueprint:** A `render.yaml` is included at the project root. On Render, create a new **Blueprint** and point it to your repo — both services will be detected and configured automatically.
+> 💡 Free-tier tip: On Render, services sleep after 15 minutes of inactivity. Use [cron-job.org](https://cron-job.org) to ping `/health` every 14 minutes and keep it alive.
+>
+> 💡 Render Blueprint: A `render.yaml` is included at the project root. On Render, create a new Blueprint and point it to this repo — both services will be detected automatically.
 
 ---
 
@@ -653,14 +648,14 @@ sequenceDiagram
 
 ## 🎭 Test Accounts
 
-The repository includes seed data for two demo organizations. Run `npm run seed` in the `server/` directory first.
+The repository includes seed data for demo organizations. Run `npm run seed` in the `server/` directory first.
 
-> All credentials are documented in `Dumy_Data.md` (local reference only, not committed).
+> All credentials are documented in `Dumy_Data.md` and are intended for local demo/testing only.
 
 ### Organization: TCS (Demo)
 
 | Role | Name | Email | Password |
-|:---|:---|:---|:---|
+| :--- | :--- | :--- | :--- |
 | 👑 **Org Admin** | Mokshil | `mokshil@tcs.flowgen.app` | `@#$Mokshil123` |
 | 🧑‍💼 **HR Manager** | Dolen | `dolen@tcs.flowgen.app` | `@#$Dolen123` |
 | 👷 **Employee** | Rahul | `rahul@tcs.flowgen.app` | `@#$Rahul123` |
@@ -675,20 +670,20 @@ The repository includes seed data for two demo organizations. Run `npm run seed`
 1. **Fork** the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
 3. Commit your changes: `git commit -m 'feat: add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
+4. Push the branch: `git push origin feature/amazing-feature`
 5. Open a **Pull Request**
 
 ### Commit Convention
 
 | Prefix | Use case |
-|:---|:---|
+| :--- | :--- |
 | `feat:` | New feature |
 | `fix:` | Bug fix |
 | `docs:` | Documentation changes |
-| `style:` | Code style (no logic change) |
+| `style:` | Code style only |
 | `refactor:` | Code restructure |
 | `test:` | Tests |
-| `chore:` | Build / tooling / deps |
+| `chore:` | Build, tooling, or dependency updates |
 
 ---
 
@@ -702,6 +697,6 @@ MIT © [FlowGen Team](LICENSE)
 
 Built with ❤️ by the FlowGen Team
 
-⭐ **Star this repo** if FlowGen helped you!
+⭐ **Star this repo** if FlowGen helped you simplify your workforce operations.
 
 </div>
